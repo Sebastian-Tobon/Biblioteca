@@ -1,8 +1,6 @@
 package co.edu.uniquindio.biblioteca.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,12 +16,14 @@ public class Libro {
     @Id
     private String isbn;
 
+    @Column(nullable = false)
     private String nombre;
 
+    @Column(nullable = false)
     private String genero;
-
+    @Column(nullable = false)
     private int unidades;
-
+    @Column(nullable = false)
     @ManyToMany
     private List<Autor> autor;
 
